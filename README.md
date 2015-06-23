@@ -44,12 +44,14 @@ data.isGrouped // undefined
 genderGroups instanceof Array // true
 genderGroups instanceof GroupedArray // true
 genderGroups.isGrouped // true
+// first group's items:
 genderGroups[0].items instanceof Array // true
 genderGroups[0].items instanceof GroupedArray // false
 
 nestedGroups instanceof Array // true
 nestedGroups instanceof GroupedArray // true
 nestedGroups.isGrouped // true
+// first group's items:
 nestedGroups[0].items instanceof Array // true
 nestedGroups[0].items instanceof GroupedArray // true
 ```
