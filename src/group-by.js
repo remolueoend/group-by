@@ -15,53 +15,25 @@
          * @returns new GroupedArray instance.
          **/
         Array.prototype.groupBy = function groupBy(keyFn){
-            var result = new GroupedArray();
-            var i, k, item;
+            var result = [], k;
+            Object.defineProperty(result, 'isGrouped', { value: true });
+
             this.forEach(function(item){
-                k = keyFn(item);
-                if(!result.some(function(pair){
-                        if(pair.key === k){
-                            pair.items.push(item);
-                            // return true to break the loop:
-                            return true;
-                        }
-                    })){
-                    // add a new key-items pair to the result:
-                    result.push({key: k, items: [item]});
+                if(this.isGrouped){
+                    result.push({key: item.key, items: item.items.groupBy(keyFn)});
+                }else{
+                    k = keyFn(item);
+                    if(!result.some(function(pair){
+                            if(pair.key === k){
+                                pair.items.push(item);
+                                // return true to break the loop:
+                                return true;
+                            }
+                        })){
+                        // add a new key-items pair to the result:
+                        result.push({key: k, items: [item]});
+                    }
                 }
-            });
-
-            return result;
-        };
-
-
-        /**
-         * Class function inheriting from class Array.
-         * Overwrites the original groupBy member function.
-         */
-        function GroupedArray(){
-            Array.apply(this);
-        }
-        // Inherit prototype and set constructor.
-        // Additionally, add a property isGrouped = true to the prototype:
-        GroupedArray.prototype = Object.create(Array.prototype, {
-            constructor: { value: GroupedArray },
-            isGrouped: { value: true }
-        });
-
-        /**
-         * Groups an already grouped array on any possible level.
-         *
-         * @param {function(item)} keyFn Function returning the key to group by.
-         * @returns new GroupedArray instance.
-         */
-        GroupedArray.prototype.groupBy = function groupBy(keyFn){
-            var result = new GroupedArray();
-            this.forEach(function(g){
-                // if g.items is not grouped yet (typeof Array), Array.groupBy gets called.
-                // If the items are already grouped (typeof GroupedArray),
-                // this method calls itself recursively.
-                result.push({key: g.key, items: g.items.groupBy(keyFn)});
             });
 
             return result;
