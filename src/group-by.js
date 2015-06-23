@@ -15,11 +15,11 @@
          * @returns new GroupedArray instance.
          **/
         Array.prototype.groupBy = function groupBy(keyFn){
-            var result = [], k;
+            var result = [], _this = this, k;
             Object.defineProperty(result, 'isGrouped', { value: true });
 
             this.forEach(function(item){
-                if(this.isGrouped){
+                if(_this.isGrouped){
                     result.push({key: item.key, items: item.items.groupBy(keyFn)});
                 }else{
                     k = keyFn(item);
