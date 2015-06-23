@@ -1,6 +1,6 @@
 {
   "name": "group-by",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extends the Array.prototype by implementing a groupBy method to generate groupings and nested groups.",
   "main": "dist/group-by.min.js",
   "scripts": {
