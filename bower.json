@@ -1,0 +1,25 @@
+{
+  "name": "group-by",
+  "version": "0.0.1",
+  "homepage": "https://github.com/remolueoend/group-by",
+  "authors": [
+    "Remo Lüönd <remo.zumsteg@outlook.com>"
+  ],
+  "description": "Extends the Array.prototype by implementing a groupBy method to generate groupings and nested groups.",
+  "main": "dist/group-by.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "Array",
+    "groupBy"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

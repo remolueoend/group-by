@@ -1,0 +1,28 @@
+{
+  "name": "group-by",
+  "version": "0.0.1",
+  "description": "Extends the Array.prototype by implementing a groupBy method to generate groupings and nested groups.",
+  "main": "dist/group-by.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remolueoend/group-by.git"
+  },
+  "keywords": [
+    "Array",
+    "groupBy"
+  ],
+  "author": "Remo Lüönd <remo.zumsteg@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/remolueoend/group-by/issues"
+  },
+  "homepage": "https://github.com/remolueoend/group-by",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
