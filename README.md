@@ -90,6 +90,17 @@ var nestedGroups = data
   .groupBy(function(user){ return user.eyeColor; });
 ```
 
+### Property Pathes
+Array.groupBy can also be called by providing a property path instead of a function:
+```javascript
+var keyProperty = 'name.first'
+var firstNameGroups = data.groupBy(keyProperty);
+```
+groupBy is able to resolve any type of property path:
+```javascript
+var key = 'prop.foo.baz.arr[1].func.0.val' // valid
+```
+
 ### Conclusions
 ```javascript
 data.isGrouped // undefined
