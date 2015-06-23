@@ -4,7 +4,7 @@
   "description": "Extends the Array.prototype by implementing a groupBy method to generate groupings and nested groups.",
   "main": "dist/group-by.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
